@@ -57,14 +57,14 @@ def organize():
 
         ##Once we have date
         if takenYear in subDir:
-            #shutil.move(file, os.path.join(takenYear, file))
+            shutil.move(file, os.path.join(takenYear, file))
             print(file, os.path.join(takenYear, file), 'Dir')
         else:
-            #os.mkdir(takenYear)
+            if not os.path.exists(takenYear): os.mkdir(takenYear) #double check in case
             subDir = subDir + [takenYear]
             print('Created ' + takenYear)
             print(file, os.path.join(takenYear, file), 'noDIr')
-            #shutil.move(file, os.path.join(takenYear, file))
+            shutil.move(file, os.path.join(takenYear, file))
 
 
 def getYear(path):
